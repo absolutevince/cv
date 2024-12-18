@@ -14,7 +14,7 @@ export default function AddEducationForm() {
     setData({ ...data, [property]: newData });
   };
   return (
-    <div className="add_education_form">
+    <div className="add_education_form block">
       <CustomInput
         type="text"
         label="University"

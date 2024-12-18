@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --clr-primary: #131010;
+  --clr-secondary: #f5efff;
+
+  --clr-accent-primary: #0a5eb0;
+
+  --clr-txt-secondary: #131010;
+  --clr-txt-primary: #f5efff;
+}
+
+#App {
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: var(--clr-primary);
+  color: var(--clr-txt-primary);
+  padding: 1rem;
+}
+
+button {
+  padding: 0.5em 1em;
+  background-color: var(--clr-accent-primary);
+  color: var(--clr-txt-primary);
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none;
+}
+
+input {
+  padding: 0.5em 1em;
+  border: none;
+}
+
+#form {
+  display: grid;
+  gap: 1rem;
+  width: 50%;
+}
+
+.block {
+  border: 1px solid var(--clr-secondary);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.custom_input {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+textarea {
+  height: 5rem;
+}

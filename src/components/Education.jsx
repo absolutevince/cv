@@ -12,7 +12,7 @@ export default function Education({ onSubmit }) {
   };
 
   return (
-    <section className="education">
+    <section className="education block">
       <h2>Education</h2>
       <ul>
         {data.length > 0 &&

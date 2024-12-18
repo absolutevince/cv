@@ -7,7 +7,7 @@ export default function CustomInput({
   placeHolder,
 }) {
   return (
-    <div className="input">
+    <div className="custom_input">
       <label htmlFor={label + "_input"}>{label}</label>
       <input
         placeholder={placeHolder}

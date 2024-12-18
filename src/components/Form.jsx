@@ -16,7 +16,7 @@ export default function Form({ onSubmit }) {
   };
 
   return (
-    <>
+    <section id="form">
       <General onSubmit={handleDataChange} />
       <Education onSubmit={handleDataChange} />
       <Experience onSubmit={handleDataChange} />
@@ -25,6 +25,6 @@ export default function Form({ onSubmit }) {
         className="form_submit"
         text="Generate"
       />
-    </>
+    </section>
   );
 }

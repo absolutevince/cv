@@ -7,26 +7,29 @@ export default function AddExperiencForm({ onSubmit, onClose }) {
     description: "",
     dateFrom: "",
     dateTo: "",
+    id: crypto.randomUUID(),
   });
 
-  const handleSubmit = () => {
+  const handleAddEntry = () => {
     const fullData = { ...data, id: crypto.randomUUID() };
     onSubmit(fullData);
   };
   return (
-    <div className="add_experience_form">
+    <div className="add_experience_form block">
       <CustomInput
         type="text"
         label="Company"
         value={data.title}
         onChange={(e) => setData({ ...data, title: e.target.value })}
       />
+      <label forHtml="add_experience_form_description">Description</label>
       <textarea
+        id="add_experience_form_description"
         value={data.description}
         onChange={(e) => setData({ ...data, description: e.target.value })}
       ></textarea>
 
-      <button onClick={handleSubmit}>Add</button>
+      <button onClick={handleAddEntry}>Add</button>
       <button onClick={onClose}>Close</button>
     </div>
   );

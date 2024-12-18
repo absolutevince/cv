@@ -18,7 +18,7 @@ export default function General({ onSubmit }) {
   };
 
   return (
-    <section className="general">
+    <section className="general block">
       <h2 className="heading">General</h2>
 
       <CustomInput

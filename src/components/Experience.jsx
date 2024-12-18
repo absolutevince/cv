@@ -12,7 +12,7 @@ export default function Experience({ onSubmit }) {
   };
 
   return (
-    <section className="experience">
+    <section className="experience block">
       <h2>Experience</h2>
       <ul>
         {data.length > 0 &&
