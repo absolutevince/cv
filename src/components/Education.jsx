@@ -11,18 +11,28 @@ export default function Education({ onSubmit }) {
     setData([...data, newData]);
   };
 
+  const handleDelete = (id) => {
+    const newData = data.filter((d) => d.id !== id);
+    setData(newData);
+  };
+
+  const handleClose = () => {
+    setIsFormOpen(false);
+  };
+
   return (
     <section className="education block">
       <h2>Education</h2>
-      <ul>
+      <ul className="item_list">
         {data.length > 0 &&
           data.map((ed) => (
-            <li>
+            <li key={ed.id}>
               <EducationItem
                 school={ed.school}
                 dateStarted={ed.dateStarted}
                 dateEnded={ed.dateEnded}
                 description={ed.description}
+                onDelete={() => handleDelete(ed.id)}
               />
             </li>
           ))}
@@ -32,11 +42,13 @@ export default function Education({ onSubmit }) {
         text="Add Education"
         onClick={() => setIsFormOpen(true)}
       />
-      {isFormOpen && <AddEducationForm onSubmit={handleFormSubmit} />}
+      {isFormOpen && (
+        <AddEducationForm onAdd={handleFormSubmit} onClose={handleClose} />
+      )}
       <CustomButton
         className="education_submit_button submit_button"
-        text="Submit"
-        onClick={() => onSubmit(data)}
+        text="Save"
+        onClick={() => onSubmit("education", data)}
       />
     </section>
   );

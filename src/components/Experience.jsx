@@ -11,18 +11,24 @@ export default function Experience({ onSubmit }) {
     setData([...data, newData]);
   };
 
+  const handleRemove = (id) => {
+    const newData = data.filter((d) => d.id !== id);
+    setData(newData);
+  };
+
   return (
     <section className="experience block">
       <h2>Experience</h2>
-      <ul>
+      <ul className="item_list">
         {data.length > 0 &&
           data.map((exp) => (
             <li key={exp.id}>
               <ExperienceItem
-                title={exp.title}
+                company={exp.company}
                 description={exp.description}
-                dateFrom={exp.dateFrom}
-                dateTo={exp.dateTo}
+                dateStarted={exp.dateStarted}
+                dateEnded={exp.dateEnded}
+                onRemove={() => handleRemove(exp.id)}
               />
             </li>
           ))}
@@ -40,7 +46,7 @@ export default function Experience({ onSubmit }) {
       )}
       <CustomButton
         className="experience_submit_button"
-        text="Submit"
+        text="Save"
         onClick={() => onSubmit("experience", data)}
       />
     </section>

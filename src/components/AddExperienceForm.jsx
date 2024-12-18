@@ -3,32 +3,47 @@ import CustomInput from "./CustomInput";
 
 export default function AddExperiencForm({ onSubmit, onClose }) {
   const [data, setData] = useState({
-    title: "",
+    company: "",
     description: "",
-    dateFrom: "",
-    dateTo: "",
-    id: crypto.randomUUID(),
+    dateStarted: "",
+    dateEnded: "",
+    id: "",
   });
 
   const handleAddEntry = () => {
     const fullData = { ...data, id: crypto.randomUUID() };
     onSubmit(fullData);
   };
+
+  const handleDataChange = (property, value) => {
+    setData({ ...data, [property]: value });
+  };
+
   return (
     <div className="add_experience_form block">
       <CustomInput
         type="text"
         label="Company"
-        value={data.title}
-        onChange={(e) => setData({ ...data, title: e.target.value })}
+        value={data.company}
+        onChange={(e) => handleDataChange("company", e.target.value)}
       />
-      <label forHtml="add_experience_form_description">Description</label>
+      <CustomInput
+        type="date"
+        label="Date Started"
+        value={data.dateStarted}
+        onChange={(e) => handleDataChange("dateStarted", e.target.value)}
+      />
+      <CustomInput
+        type="date"
+        label="Date Ended"
+        onChange={(e) => handleDataChange("dateEnded", e.target.value)}
+      />
+      <label htmlFor="add_experience_form_description">Description</label>
       <textarea
         id="add_experience_form_description"
         value={data.description}
-        onChange={(e) => setData({ ...data, description: e.target.value })}
+        onChange={(e) => handleDataChange("description", e.target.value)}
       ></textarea>
-
       <button onClick={handleAddEntry}>Add</button>
       <button onClick={onClose}>Close</button>
     </div>

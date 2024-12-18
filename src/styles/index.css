@@ -12,6 +12,16 @@
 
   --clr-txt-secondary: #131010;
   --clr-txt-primary: #f5efff;
+
+  --clr-error: #f72c5b;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.text-center {
+  text-align: center;
 }
 
 #App {
@@ -20,6 +30,41 @@
   background-color: var(--clr-primary);
   color: var(--clr-txt-primary);
   padding: 1rem;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1.3fr 1.5fr;
+}
+
+.preview {
+  border: 1px solid var(--clr-secondary);
+  background-color: #fff;
+  color: #000;
+}
+
+.preview > * {
+  padding: 1rem 2rem;
+}
+
+.preview_name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.preview_label {
+  font-weight: bold;
+}
+
+.preview hr {
+  height: 2px;
+  background-color: #000;
+  border: none;
+  margin-top: 2rem;
+}
+
+.preview_list {
+  padding: 1rem;
+  list-style-type: circle;
 }
 
 button {
@@ -29,17 +74,21 @@ button {
   font-weight: bold;
   letter-spacing: 1px;
   border: none;
+  cursor: pointer;
 }
 
 input {
   padding: 0.5em 1em;
   border: none;
 }
+textarea {
+  padding: 0.5em 1em;
+  height: 5rem;
+}
 
 #form {
   display: grid;
   gap: 1rem;
-  width: 50%;
 }
 
 .block {
@@ -47,6 +96,7 @@ input {
   border-radius: 1rem;
   padding: 2rem;
   display: grid;
+
   gap: 1rem;
 }
 
@@ -55,6 +105,15 @@ input {
   grid-template-columns: 1fr 3fr;
 }
 
-textarea {
-  height: 5rem;
+.item_list {
+  display: grid;
+  gap: 0.5rem;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.remove_button {
+  background-color: var(--clr-error);
 }

@@ -61,7 +61,7 @@ export default function General({ onSubmit }) {
         property="email"
         onChange={handleDataChange}
       />
-      <CustomButton text="Submit" onClick={() => onSubmit("general", data)} />
+      <CustomButton text="Save" onClick={() => onSubmit("general", data)} />
     </section>
   );
 }

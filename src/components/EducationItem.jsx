@@ -1,20 +1,31 @@
+import CustomButton from "./CustomButton";
+
 export default function EducationItem({
   school,
   degree,
   dateStarted,
   dateEnded,
   description,
+  id,
+  onDelete,
 }) {
   return (
-    <>
-      <h3>{school}</h3>
-      <p>{degree}</p>
-      <div className="date">
-        <span>
-          {dateStarted} - {dateEnded}
-        </span>
+    <div className="item">
+      <div>
+        <h3>{school}</h3>
+        <p>{degree}</p>
+        <div className="date">
+          <span>
+            {dateStarted} - {dateEnded}
+          </span>
+        </div>
+        <p>{description}</p>
       </div>
-      <p>{description}</p>
-    </>
+      <CustomButton
+        className="remove_button"
+        text="Remove"
+        onClick={onDelete}
+      />
+    </div>
   );
 }
