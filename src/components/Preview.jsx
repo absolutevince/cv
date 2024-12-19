@@ -1,5 +1,5 @@
 export default function Preview({ data }) {
-  const { general, education, experience } = data;
+  const { general, education, experience, skills } = data;
 
   return (
     <section className="preview">
@@ -50,6 +50,19 @@ export default function Preview({ data }) {
                 <p>
                   {exp.dateStarted} - {exp.dateEnded}
                 </p>
+              </li>
+            ))}
+          </ul>
+          <hr />
+        </section>
+      )}
+      {skills.length > 0 && (
+        <section className="preview_experience">
+          <h2>Skills</h2>
+          <ul className="preview_list">
+            {skills.map((skl) => (
+              <li key={skl.id}>
+                <p>{skl.name}</p>
               </li>
             ))}
           </ul>

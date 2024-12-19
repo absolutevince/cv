@@ -3,12 +3,14 @@ import General from "./General";
 import Experience from "./Experience";
 import Education from "./Education";
 import CustomButton from "./CustomButton";
+import Skills from "./Skills";
 
 export default function Form({ onSubmit }) {
   const [data, setData] = useState({
     general: {},
-    education: {},
-    experience: {},
+    education: [],
+    experience: [],
+    skills: [],
   });
 
   const handleDataChange = (property, newData) => {
@@ -20,6 +22,7 @@ export default function Form({ onSubmit }) {
       <General onSubmit={handleDataChange} />
       <Education onSubmit={handleDataChange} />
       <Experience onSubmit={handleDataChange} />
+      <Skills onSubmit={handleDataChange} />
       <CustomButton
         onClick={() => onSubmit(data)}
         className="form_submit"
